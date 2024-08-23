@@ -1,0 +1,77 @@
+.player {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 5em;
+  color: aliceblue;
+  background: #333537;
+  border: 1px solid #4b4b4b;
+  border-radius: 10px;
+
+  padding: 15px;
+  margin: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coverImage {
+  background-color: blueviolet;
+  width: 55px;
+  height: 55px;
+}
+.infoParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.togglePlay {
+  background: aliceblue;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 5em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+.togglePlay:active {
+  transform: scale(0.95);
+}
+.toggleIcon {
+  width: 15px;
+  height: 15px;
+}
+
+/*
+! fix cette feature le bouton tropa gauche
+*/
+.playIcon {
+  position: relative;
+  right: 1px;
+}
+.musicInfo {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.timecode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  background: #4b4b4b;
+  width: 20em;
+  height: 6px;
+  margin: 0 0.5em;
+  border-radius: 5em;
+}
+.volumeIcon {
+  color: aliceblue;
+  width: 23px;
+  height: 23px;
+}
