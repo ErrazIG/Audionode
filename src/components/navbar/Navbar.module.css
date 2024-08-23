@@ -1,0 +1,29 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25em 2em;
+  color: aliceblue;
+  font-family: "Vibrant-Display", sans-serif;
+}
+
+.logo {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  margin-left: 1.25em;
+}
+
+a {
+  color: aliceblue;
+  text-decoration: none;
+}
