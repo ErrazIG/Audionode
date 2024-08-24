@@ -86,23 +86,7 @@ const MusicPlayer = ({ videoData }) => {
             )}
           </button>
           <div className={style.musicInfo}>
-            {videoTitle && (
-              <>
-                <div className={style.titleContainer}>
-                  <p className={style.title}>
-                    <span className={style.title1}>
-                      &nbsp;{videoTitle}
-                      {` `}{" "}
-                    </span>
-
-                    <span className={style.title2}>
-                      &nbsp;{videoTitle}&nbsp;
-                    </span>
-                  </p>
-                </div>
-                {/* <p className={style.title}>{videoTitle}</p> */}
-              </>
-            )}
+            {videoTitle && <p className={style.title}>{videoTitle}</p>}
             <div className={style.timecode}>
               <p className={style.startTimeCode}>{formatTime(currentTime)}</p>
               <div className={style.progressBar}>
