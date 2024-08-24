@@ -1,7 +1,7 @@
 .player {
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 50%;
   height: 5em;
   color: aliceblue;
   background: #333537;
@@ -15,10 +15,15 @@
   align-items: center;
 }
 
-.coverImage {
-  background-color: blueviolet;
+.coverImageContainer {
   width: 55px;
   height: 55px;
+}
+
+.coverImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .infoParent {
   display: flex;
@@ -37,41 +42,180 @@
   align-items: center;
   margin: 1em;
 }
-.togglePlay:active {
-  transform: scale(0.95);
-}
+
 .toggleIcon {
   width: 15px;
   height: 15px;
 }
 
-/*
-! fix cette feature le bouton tropa gauche
-*/
+.pauseIcon {
+  position: relative;
+  left: 1px;
+}
+
 .playIcon {
   position: relative;
-  right: 1px;
+  right: 0.2px;
 }
+
 .musicInfo {
   height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
+.titleContainer {
+  left: 0px;
+  width: 25em;
+  height: 21px;
+  color: aliceblue;
+  position: relative;
+  overflow: hidden;
+}
+.title {
+  font-family: "Vibrant-Display", sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+.title1 {
+  display: inline-block;
+  -webkit-animation: scrolling-left1 20s linear infinite;
+  animation: scrolling-left1 20s linear infinite;
+}
+.title2 {
+  display: inline-block;
+  -webkit-animation: scrolling-left2 20s linear infinite;
+  animation: scrolling-left2 20s linear infinite;
+  animation-delay: 10s;
+}
+
+@keyframes scrolling-left1 {
+  0% {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes scrolling-left2 {
+  0% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+  }
+}
+
+@-webkit-keyframes scrolling-left1 {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes scrolling-left2 {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-200%);
+  }
+}
+
 .timecode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progressBar {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .line {
   background: #4b4b4b;
-  width: 20em;
+  width: 30em;
   height: 6px;
-  margin: 0 0.5em;
-  border-radius: 5em;
+  margin: 0 0.75em;
+  position: relative;
+  z-index: 9;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: rgba(0, 0, 0, 0.2);
+  outline: none;
+  border-radius: 10px;
+}
+.line::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  background: #e49227;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+.progressLine {
+  background: #e49227;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  border-radius: 10px;
+  width: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 10;
+}
+.volume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.volumeBar {
+  height: 6px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: rgba(0, 0, 0, 0.2);
+  outline: none;
+  border-radius: 10px;
+}
+.volumeBar::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  background: #e49227;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
 }
 .volumeIcon {
   color: aliceblue;
   width: 23px;
   height: 23px;
+}
+
+.videoPlayer {
+  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -500px;
+  opacity: 0;
+  visibility: hidden;
 }
