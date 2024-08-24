@@ -1,17 +1,41 @@
+import axios from "axios";
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { AiOutlineEnter } from "react-icons/ai";
 import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
 import { IoIosSearch } from "react-icons/io";
 import style from "./SearchBar.module.css";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Search Query:", searchQuery);
-    setSearchQuery("");
+    if (!searchQuery) return;
+
+    try {
+      const response = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            maxResults: 1,
+            q: searchQuery,
+            key: "key",
+            type: "video",
+          },
+        }
+      );
+
+      const videoData = response.data.items[0];
+      onSearch(videoData);
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+    } finally {
+      setSearchQuery("");
+    }
   };
+
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       handleSubmit(event);
@@ -43,6 +67,10 @@ const SearchBar = () => {
       </div>
     </form>
   );
+};
+
+SearchBar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
