@@ -52,6 +52,9 @@
 }
 
 @media (width >=640px) {
+  .searchbar {
+    width: 55%;
+  }
 }
 @media (width >=1240px) {
   .searchbar {
