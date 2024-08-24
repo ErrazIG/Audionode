@@ -6,13 +6,13 @@ const Navbar = () => {
       <h1 className={style.logo}>Audionode</h1>
       <ul>
         <li>
-          <a href="#">///</a>
+          <p>#####</p>
         </li>
         <li>
-          <a href="#">///</a>
+          <p>#####</p>
         </li>
         <li>
-          <a href="#">///</a>
+          <p>#####</p>
         </li>
       </ul>
     </nav>

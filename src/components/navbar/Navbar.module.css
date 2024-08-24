@@ -6,6 +6,7 @@
   padding: 1.25em 2em;
   color: aliceblue;
   font-family: "Vibrant-Display", sans-serif;
+  user-select: none;
 }
 
 .logo {
