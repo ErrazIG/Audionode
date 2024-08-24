@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch }) => {
             part: "snippet",
             maxResults: 1,
             q: searchQuery,
-            key: "key",
+            key: "AIzaSyDEjo17TlRvyxSA0aWnjD1mQez72LT02WM",
             type: "video",
           },
         }

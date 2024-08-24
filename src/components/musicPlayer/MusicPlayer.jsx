@@ -77,6 +77,17 @@ const MusicPlayer = ({ videoData }) => {
         <div className={style.coverImageContainer}>
           <img className={style.coverImage} src={thumbnailUrl} alt="" />
         </div>
+        <button
+          id={style.btnsPlay}
+          className={style.togglePlay}
+          onClick={togglePlayPause}
+        >
+          {isPlaying ? (
+            <FaPause className={`${style.playIcon} ${style.toggleIcon}`} />
+          ) : (
+            <FaPlay className={`${style.pauseIcon} ${style.toggleIcon}`} />
+          )}
+        </button>
         <div className={style.infoParent}>
           <button className={style.togglePlay} onClick={togglePlayPause}>
             {isPlaying ? (
@@ -116,15 +127,18 @@ const MusicPlayer = ({ videoData }) => {
           />
         </div>
       </div>
-      <ReactPlayer
-        ref={playerRef}
-        url={videoUrl}
-        className={style.videoPlayer}
-        playing={isPlaying}
-        volume={volume}
-        onProgress={handleProgress}
-        onDuration={handleDuration}
-      />
+
+      <section>
+        <ReactPlayer
+          ref={playerRef}
+          url={videoUrl}
+          className={style.videoPlayer}
+          playing={isPlaying}
+          volume={volume}
+          onProgress={handleProgress}
+          onDuration={handleDuration}
+        />
+      </section>
     </>
   );
 };

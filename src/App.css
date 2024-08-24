@@ -14,12 +14,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+html,
 body {
   background: #1f1f1f;
+  height: 100%;
+  margin: 0;
 }
+#root {
+  height: 100%;
+}
+
 .container {
-  width: 100dvw;
-  height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,4 +36,13 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+section {
+  position: absolute;
+  top: -1000px;
+
+  width: 0;
+  height: 0;
+  display: none;
 }
