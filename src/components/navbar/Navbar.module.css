@@ -1,5 +1,5 @@
 .navbar {
-  width: 100%;
+  width: 100dvw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,7 +8,6 @@
   font-family: "Vibrant-Display", sans-serif;
   user-select: none;
 }
-
 .logo {
   font-family: "Audiowide", sans-serif;
   font-weight: 400;
@@ -24,7 +23,29 @@ li {
   margin-left: 1.25em;
 }
 
+.txt1,
+.txt2 {
+  display: none;
+}
+
 a {
   color: aliceblue;
   text-decoration: none;
+}
+@media (width >=640px) {
+  .txt1 {
+    display: none;
+  }
+
+  .txt2,
+  .txt3 {
+    display: block;
+  }
+}
+@media (width >=1240px) {
+  .txt1,
+  .txt2,
+  .txt3 {
+    display: block;
+  }
 }

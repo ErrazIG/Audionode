@@ -5,13 +5,13 @@ const Navbar = () => {
     <nav className={style.navbar}>
       <h1 className={style.logo}>Audionode</h1>
       <ul>
-        <li>
+        <li className={style.txt1}>
           <p>#####</p>
         </li>
-        <li>
+        <li className={style.txt2}>
           <p>#####</p>
         </li>
-        <li>
+        <li className={style.txt3}>
           <p>#####</p>
         </li>
       </ul>
