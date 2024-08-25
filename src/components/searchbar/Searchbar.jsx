@@ -9,7 +9,7 @@ import style from "./SearchBar.module.css";
 const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  // const apiKey = env.API_YOUTUBE_KEY;
+  const apiKey = process.env.REACT_APP_API_YOUTUBE_KEY;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,7 +23,7 @@ const SearchBar = ({ onSearch }) => {
             part: "snippet",
             maxResults: 1,
             q: searchQuery,
-            key: "apiKey",
+            key: apiKey,
             type: "video",
           },
         }
