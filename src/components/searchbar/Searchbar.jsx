@@ -10,6 +10,8 @@ const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   // eslint-disable-next-line no-undef
+  console.log(process.env.REACT_APP_API_YOUTUBE_KEY);
+  // eslint-disable-next-line no-undef
   const apiKey = process.env.REACT_APP_API_YOUTUBE_KEY;
 
   const handleSubmit = async (event) => {
